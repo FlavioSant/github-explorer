@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const RepositoryCardContainer = styled.div`
   display: flex;
   align-items: center;
-  background: #fff;
+  background: var(--white);
   border-radius: 5px;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -31,12 +31,12 @@ export const RepositoryCardContainer = styled.div`
 
     & strong {
       font-size: 1.6rem;
-      color: #3d3d4d;
+      color: var(--text-primary-light);
     }
 
     & p {
       font-size: 1.2rem;
-      color: #a8a8b3;
+      color: var(--text-secondary);
       margin-top: 0.4rem;
     }
 

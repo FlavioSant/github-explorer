@@ -8,6 +8,7 @@ interface RepositoryInfoData {
   fullName: string;
   login: string;
   createdAt: string;
+  license: string;
 }
 
 interface RepositoryInfoProps {
@@ -20,11 +21,18 @@ const RepositoryInfo: NextPage<RepositoryInfoProps> = ({
   return (
     <RepositoryInfoContainer>
       <header>
-        <img
-          src={repositoryInfoData.avatarURL}
-          alt={repositoryInfoData.login}
-          title={repositoryInfoData.login}
-        />
+        <div>
+          <img
+            src={repositoryInfoData.avatarURL}
+            alt={repositoryInfoData.login}
+            title={repositoryInfoData.login}
+          />
+          {repositoryInfoData.license && (
+            <span title={repositoryInfoData.license}>
+              {repositoryInfoData.license}
+            </span>
+          )}
+        </div>
         <section>
           <div>
             <strong>{repositoryInfoData.fullName}</strong>

@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { FiChevronLeft } from 'react-icons/fi';
+import { FiChevronLeft, FiExternalLink, FiStar } from 'react-icons/fi';
+import { GoRepoForked, GoIssueOpened } from 'react-icons/go';
 
 import { format, parseISO } from 'date-fns';
 import { api } from '../../services/api';
@@ -11,7 +12,9 @@ import RepositoryInfo from '../../components/RepositoryInfo';
 import {
   Header,
   IssueListContainer,
+  LinksContainer,
 } from '../../styles/pages/repositoryDetails';
+
 import RepositoryCounts from '../../components/RepositoryCounts';
 
 interface Repository {
@@ -19,8 +22,13 @@ interface Repository {
   description: string;
   full_name: string;
   forks_count: number;
+  homepage: string;
+  html_url: string;
   stargazers_count: number;
   open_issues_count: number;
+  license: {
+    spdx_id: string;
+  };
   owner: {
     login: string;
     avatar_url: string;
@@ -48,6 +56,8 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
 }) => {
   const router = useRouter();
 
+  console.log(repository);
+
   return (
     <>
       <Header>
@@ -67,6 +77,7 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
               description: repository.description,
               fullName: repository.full_name,
               login: repository.owner.login,
+              license: repository.license.spdx_id,
             }}
           />
           <RepositoryCounts
@@ -74,17 +85,38 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
               {
                 label: 'Stars',
                 value: repository.stargazers_count,
+                icon: FiStar,
               },
               {
                 label: 'Forks',
                 value: repository.forks_count,
+                icon: GoRepoForked,
               },
               {
                 label: 'Issues abertas',
                 value: repository.open_issues_count,
+                icon: GoIssueOpened,
               },
             ]}
           />
+          <LinksContainer>
+            <a
+              href={repository.homepage}
+              title="Home page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Home page
+            </a>
+            <a
+              href={repository.html_url}
+              title="Ver repositório"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver repositório <FiExternalLink size={20} />
+            </a>
+          </LinksContainer>
         </>
       )}
 

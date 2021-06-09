@@ -9,10 +9,10 @@ export const InputContainer = styled.div<InputContainerProps>`
 
   & input {
     border: 0;
-    border: 2px solid #fff;
+    border: 2px solid #ddd;
     border-radius: 5px 0 0 5px;
     border-right: 0;
-    color: #3a3a3a;
+    color: var(--text-primary);
     height: 4rem;
     padding: 0 2.4rem;
     width: 100%;
@@ -20,27 +20,28 @@ export const InputContainer = styled.div<InputContainerProps>`
     ${props =>
       props.hasError &&
       css`
-        border-color: #c53030;
+        border-color: var(--red);
       `}
 
     &::placeholder {
-      color: #a8a8b3;
+      color: var(--text-secondary-light);
     }
 
     &:focus {
-      border-color: #a8a8b3;
+      border-color: var(--text-secondary-light);
     }
   }
 
   & span {
     display: block;
-    color: #c53030;
+    color: var(--red);
     margin-top: 8px;
   }
 
   @media (max-width: 600px) {
     & input {
       border-radius: 5px;
+      border: 2px solid #ddd;
     }
   }
 `;

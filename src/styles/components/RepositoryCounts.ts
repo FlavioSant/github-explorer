@@ -15,14 +15,20 @@ export const RepositoryCountsContainer = styled.div`
         margin-left: 5rem;
       }
 
+      svg {
+        margin-right: 0.3rem;
+      }
+
       strong {
+        display: flex;
+        align-items: center;
         font-size: 2.4rem;
-        color: #3d3d4d;
+        color: var(--text-primary-light);
       }
 
       span {
         margin-top: 0.3rem;
-        color: #6c6c80;
+        color: var(--text-secondary);
       }
     }
 

@@ -1,6 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --background-color: #F0F0F5;
+    --white: #ffffff;
+    --green: #04d361;
+    --green-dark: #00b852;
+    --blue: #267dff;
+    --blue-dark: #116cf5;
+    --red: #c53030;
+    --text-primary: #3a3a3a;
+    --text-primary-light: #3d3d4d;
+    --text-secondary: #737180;
+    --text-secondary-light: #a8a8b3;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -31,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #F0F0F5 url('/github-background.svg') no-repeat 70% top;
+    background: var(--background-color) url('/github-background.svg') no-repeat 70% top;
   }
 
   body, input, button {

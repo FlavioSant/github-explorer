@@ -25,7 +25,7 @@ const IssueCard: NextPage<IssueCardProps> = ({
           </p>
         </div>
 
-        <FiChevronRight size={20} color="#cbcbd6" />
+        <FiChevronRight size={20} color="#a8a8b3" />
       </a>
     </IssueCardContainer>
   );

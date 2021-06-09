@@ -1,9 +1,12 @@
 import { NextPage } from 'next';
+import { IconBaseProps } from 'react-icons';
+
 import { RepositoryCountsContainer } from '../../styles/components/RepositoryCounts';
 
 interface Counts {
   label: string;
   value: number;
+  icon: React.ComponentType<IconBaseProps>;
 }
 
 interface RepositoryCountsProps {
@@ -16,10 +19,13 @@ const RepositoryCounts: NextPage<RepositoryCountsProps> = ({
   return (
     <RepositoryCountsContainer>
       <ul>
-        {repositoryCounts.map((count, index) => (
+        {repositoryCounts.map(({ label, value, icon: Icon }, index) => (
           <li key={index}>
-            <strong>{count.value}</strong>
-            <span>{count.label}</span>
+            <strong>
+              <Icon size={24} />
+              {value}
+            </strong>
+            <span>{label}</span>
           </li>
         ))}
       </ul>

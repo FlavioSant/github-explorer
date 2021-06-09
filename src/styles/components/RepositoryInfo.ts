@@ -7,10 +7,27 @@ export const RepositoryInfoContainer = styled.section`
     display: flex;
     align-items: center;
 
-    & img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+      }
+
+      span {
+        background: var(--red);
+        border-radius: 3px;
+        color: var(--white);
+        font-size: 0.975rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        padding: 0.1rem 0.5rem;
+      }
     }
 
     & section {
@@ -18,40 +35,37 @@ export const RepositoryInfoContainer = styled.section`
 
       & div {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       & span {
-        color: #737380;
+        color: var(--text-secondary);
         font-size: 0.975rem;
       }
 
       & strong {
         font-size: 2.375rem;
-        color: #3d3d4d;
+        color: var(--text-primary);
       }
 
       & p {
         font-size: 1.2rem;
-        color: #737380;
-        margin-top: 0.3rem;
+        color: var(--text-secondary);
+        margin-top: 0.8rem;
       }
     }
 
     @media (max-width: 600px) {
-      & img {
-        width: 100px;
-        height: 100px;
+      & div {
+        img {
+          width: 100px;
+          height: 100px;
+        }
       }
 
       & section {
         margin-left: 0.6rem;
-
-        & div {
-          flex-direction: column;
-          align-items: flex-start;
-        }
 
         & strong {
           font-size: 2rem;
@@ -59,7 +73,6 @@ export const RepositoryInfoContainer = styled.section`
 
         & p {
           font-size: 1.1rem;
-          margin-top: 0.8rem;
         }
       }
     }

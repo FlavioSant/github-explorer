@@ -9,15 +9,15 @@ export const DashboardContainer = styled.div`
     & button {
       width: 15rem;
       height: 4rem;
-      background: #04d361;
+      background: var(--green);
       border: 0;
       border-radius: 0 5px 5px 0;
-      color: #fff;
+      color: var(--white);
       font-weight: bold;
       transition: background 0.2s;
 
       &:hover {
-        background: #00b852;
+        background: var(--green-dark);
       }
     }
   }
@@ -36,7 +36,7 @@ export const DashboardContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #3a3a3a;
+  color: var(--text-primary);
   font-size: 3rem;
   line-height: 1.4;
   max-width: 450px;
