@@ -77,7 +77,7 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
               description: repository.description,
               fullName: repository.full_name,
               login: repository.owner.login,
-              license: repository.license.spdx_id,
+              license: repository?.license?.spdx_id,
             }}
           />
           <RepositoryCounts
@@ -100,14 +100,17 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
             ]}
           />
           <LinksContainer>
-            <a
-              href={repository.homepage}
-              title="Home page"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Home page
-            </a>
+            {repository.homepage && (
+              <a
+                className="buttonBlue"
+                href={repository.homepage}
+                title="Home page"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Home page
+              </a>
+            )}
             <a
               href={repository.html_url}
               title="Ver repositório"

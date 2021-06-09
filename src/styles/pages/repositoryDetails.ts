@@ -65,11 +65,11 @@ export const LinksContainer = styled.div`
     text-decoration: none;
     transition: background 0.2s;
 
-    &:first-child {
+    &.buttonBlue {
       background: var(--blue);
     }
 
-    &:first-child:hover {
+    &.buttonBlue:hover {
       background: var(--blue-dark);
     }
 
