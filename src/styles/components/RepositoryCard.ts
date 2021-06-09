@@ -39,5 +39,11 @@ export const RepositoryCardContainer = styled.div`
       color: #a8a8b3;
       margin-top: 0.4rem;
     }
+
+    @media (max-width: 600px) {
+      & strong {
+        font-size: 1.475rem;
+      }
+    }
   }
 `;

@@ -48,8 +48,6 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
 }) => {
   const router = useRouter();
 
-  console.log({ repository, issues });
-
   return (
     <>
       <Header>

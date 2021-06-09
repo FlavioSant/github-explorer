@@ -38,4 +38,8 @@ export const IssueListContainer = styled.main`
     margin: 0.5rem 0 2.5rem 0;
     width: 100%;
   }
+
+  @media (max-width: 600px) {
+    margin-top: 5rem;
+  }
 `;

@@ -37,4 +37,10 @@ export const InputContainer = styled.div<InputContainerProps>`
     color: #c53030;
     margin-top: 8px;
   }
+
+  @media (max-width: 600px) {
+    & input {
+      border-radius: 5px;
+    }
+  }
 `;

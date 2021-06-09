@@ -38,5 +38,30 @@ export const RepositoryInfoContainer = styled.section`
         margin-top: 0.3rem;
       }
     }
+
+    @media (max-width: 600px) {
+      & img {
+        width: 100px;
+        height: 100px;
+      }
+
+      & section {
+        margin-left: 0.6rem;
+
+        & div {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        & strong {
+          font-size: 2rem;
+        }
+
+        & p {
+          font-size: 1.1rem;
+          margin-top: 0.8rem;
+        }
+      }
+    }
   }
 `;

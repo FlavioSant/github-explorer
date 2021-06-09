@@ -35,6 +35,12 @@ export const IssueCardContainer = styled.div`
         font-size: 1.2rem;
         margin-top: 0.4rem;
       }
+
+      @media (max-width: 600px) {
+        & strong {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
 `;
