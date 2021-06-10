@@ -14,8 +14,6 @@ const Header: NextPage<HeaderProps> = ({ toggleTheme }) => {
   const router = useRouter();
   const { type } = useContext(ThemeContext);
 
-  console.log('TYPE', type);
-
   return (
     <HeaderContainer>
       <div>
