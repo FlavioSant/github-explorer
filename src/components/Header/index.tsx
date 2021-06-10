@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { FiChevronLeft, FiMoon, FiSun } from 'react-icons/fi';
+import { MdExplore } from 'react-icons/md';
 
 import { ThemeContext } from 'styled-components';
 import { HeaderContainer } from '../../styles/components/Header';
@@ -16,15 +17,20 @@ const Header: NextPage<HeaderProps> = ({ toggleTheme }) => {
 
   return (
     <HeaderContainer>
-      <div>
-        <img src="/logo.svg" alt="GitHub Explorer" title="GitHub Explorer" />
-        <button onClick={toggleTheme}>
+      <section>
+        <div title="GitHub Explorer">
+          <MdExplore size={40} />
+          <h1>
+            github<span>_explorer</span>
+          </h1>
+        </div>
+        <button onClick={toggleTheme} title="Mudar Tema">
           {type === 'LIGHT' ? <FiMoon size={28} /> : <FiSun size={28} />}
         </button>
-      </div>
+      </section>
       {router.pathname !== '/' && (
         <button type="button" title="Voltar" onClick={() => router.back()}>
-          <FiChevronLeft size={16} />
+          <FiChevronLeft size={20} />
           Voltar
         </button>
       )}

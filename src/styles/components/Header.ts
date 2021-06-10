@@ -5,11 +5,29 @@ export const HeaderContainer = styled.header`
   align-items: flex-start;
   flex-direction: column;
 
-  & div {
+  & section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    & div {
+      display: flex;
+      align-items: center;
+
+      & h1 {
+        margin-left: 0.675rem;
+        color: ${({ theme }) => theme.colors.textSecondary};
+
+        span {
+          color: ${({ theme }) => theme.colors.textSecondaryLight};
+        }
+      }
+
+      & svg {
+        color: ${({ theme }) => theme.colors.textPrimary};
+      }
+    }
 
     & button {
       background: transparent;
@@ -29,7 +47,8 @@ export const HeaderContainer = styled.header`
     border: 0;
     background: transparent;
     color: ${({ theme }) => theme.colors.textSecondaryLight};
-    margin-top: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1.275rem;
     transition: color 0.2s;
 
     &:hover {
