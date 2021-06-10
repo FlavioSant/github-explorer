@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const IssueCardContainer = styled.div`
-  background: var(--white);
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
@@ -26,12 +26,12 @@ export const IssueCardContainer = styled.div`
       margin-left: 1.6rem;
 
       & strong {
-        color: var(--text-primary-light);
+        color: ${({ theme }) => theme.colors.textPrimaryLight};
         font-size: 1.6rem;
       }
 
       & p {
-        color: var(--text-secondary);
+        color: ${({ theme }) => theme.colors.textSecondary};
         font-size: 1.2rem;
         margin-top: 0.4rem;
       }
@@ -41,6 +41,10 @@ export const IssueCardContainer = styled.div`
           font-size: 1.4rem;
         }
       }
+    }
+
+    & svg {
+      color: ${({ theme }) => theme.colors.textSecondaryLight};
     }
   }
 `;

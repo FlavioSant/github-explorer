@@ -1,38 +1,15 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  & button {
-    display: flex;
-    align-items: center;
-    border: 0;
-    background: transparent;
-    color: var(--text-secondary-light);
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--text-primary);
-    }
-  }
-
-  svg {
-    margin-right: 0.3rem;
-  }
-`;
-
 export const IssueListContainer = styled.main`
   margin-top: 8rem;
 
   & h1 {
-    color: var(--text-primary-light);
+    color: ${({ theme }) => theme.colors.textPrimaryLight};
     text-align: center;
   }
 
   & hr {
-    background: var(--text-secondary-light);
+    background: ${({ theme }) => theme.colors.textSecondaryLight};
     border: none;
     height: 1px;
     margin: 0.5rem 0 2.5rem 0;
@@ -57,20 +34,20 @@ export const LinksContainer = styled.div`
     display: flex;
     align-items: center;
     align-self: flex-end;
-    background: var(--green);
+    background: ${({ theme }) => theme.colors.green};
     border-radius: 5px;
-    color: var(--white);
+    color: #fff;
     font-weight: bold;
     padding: 0.5rem 1rem;
     text-decoration: none;
     transition: background 0.2s;
 
     &.buttonBlue {
-      background: var(--blue);
+      background: ${({ theme }) => theme.colors.blue};
     }
 
     &.buttonBlue:hover {
-      background: var(--blue-dark);
+      background: ${({ theme }) => theme.colors.blueDark};
     }
 
     svg {
@@ -78,7 +55,7 @@ export const LinksContainer = styled.div`
     }
 
     &:hover {
-      background: var(--green-dark);
+      background: ${({ theme }) => theme.colors.greenDark};
     }
   }
 `;

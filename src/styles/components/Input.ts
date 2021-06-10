@@ -12,7 +12,7 @@ export const InputContainer = styled.div<InputContainerProps>`
     border: 2px solid #ddd;
     border-radius: 5px 0 0 5px;
     border-right: 0;
-    color: var(--text-primary);
+    color: #3a3a3a;
     height: 4rem;
     padding: 0 2.4rem;
     width: 100%;
@@ -20,21 +20,21 @@ export const InputContainer = styled.div<InputContainerProps>`
     ${props =>
       props.hasError &&
       css`
-        border-color: var(--red);
+        border-color: ${({ theme }) => theme.colors.red};
       `}
 
     &::placeholder {
-      color: var(--text-secondary-light);
+      color: #a8a8b3;
     }
 
     &:focus {
-      border-color: var(--text-secondary-light);
+      border-color: #a8a8b3;
     }
   }
 
   & span {
     display: block;
-    color: var(--red);
+    color: ${({ theme }) => theme.colors.red};
     margin-top: 8px;
   }
 

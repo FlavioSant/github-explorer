@@ -20,9 +20,9 @@ export const RepositoryInfoContainer = styled.section`
       }
 
       span {
-        background: var(--red);
+        background: ${({ theme }) => theme.colors.red};
         border-radius: 3px;
-        color: var(--white);
+        color: #fff;
         font-size: 0.975rem;
         font-weight: bold;
         margin-top: 1rem;
@@ -40,18 +40,18 @@ export const RepositoryInfoContainer = styled.section`
       }
 
       & span {
-        color: var(--text-secondary);
+        color: ${({ theme }) => theme.colors.textSecondaryLight};
         font-size: 0.975rem;
       }
 
       & strong {
         font-size: 2.375rem;
-        color: var(--text-primary);
+        color: ${({ theme }) => theme.colors.textPrimary};
       }
 
       & p {
         font-size: 1.2rem;
-        color: var(--text-secondary);
+        color: ${({ theme }) => theme.colors.textSecondary};
         margin-top: 0.8rem;
       }
     }

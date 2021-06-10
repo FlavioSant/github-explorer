@@ -1,20 +1,40 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --background-color: #F0F0F5;
-    --white: #ffffff;
-    --green: #04d361;
-    --green-dark: #00b852;
-    --blue: #267dff;
-    --blue-dark: #116cf5;
-    --red: #c53030;
-    --text-primary: #3a3a3a;
-    --text-primary-light: #3d3d4d;
-    --text-secondary: #737180;
-    --text-secondary-light: #a8a8b3;
-  }
+export const lightTheme = {
+  type: 'LIGHT',
+  colors: {
+    backgroundColor: '#F0F0F5',
+    white: '#ffffff',
+    green: '#04d361',
+    greenDark: '#00b852',
+    blue: '#267dff',
+    blueDark: '#116cf5',
+    red: '#c53030',
+    textPrimary: '#3a3a3a',
+    textPrimaryLight: '#3d3d4d',
+    textSecondary: '#737180',
+    textSecondaryLight: '#9d9da8',
+  },
+};
 
+export const darkTheme = {
+  type: 'DARK',
+  colors: {
+    backgroundColor: '#4c4c52',
+    white: '#3a3a3a',
+    green: '#04d361',
+    greenDark: '#00b852',
+    blue: '#267dff',
+    blueDark: '#116cf5',
+    red: '#c53030',
+    textPrimary: '#dfdfe6',
+    textPrimaryLight: '#F0F0F5',
+    textSecondary: '#9d9ba8',
+    textSecondaryLight: '#cccbd4',
+  },
+};
+
+const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -45,7 +65,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: var(--background-color) url('/github-background.svg') no-repeat 70% top;
+    background: ${({ theme }) =>
+      theme.colors
+        .backgroundColor} url('/github-background.svg') no-repeat 70% top;
   }
 
   body, input, button {

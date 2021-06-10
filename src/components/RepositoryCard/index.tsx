@@ -28,7 +28,7 @@ const RepositoryCard: NextPage<RepositoryCardProps> = ({
         <strong>{repositoryCardData.fullName}</strong>
         <p>{repositoryCardData.description}</p>
       </div>
-      <FiChevronRight size={24} color="#a8a8b3" />
+      <FiChevronRight size={24} />
     </RepositoryCardContainer>
   );
 };

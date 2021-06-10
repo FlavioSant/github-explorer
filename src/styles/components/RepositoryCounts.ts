@@ -23,12 +23,12 @@ export const RepositoryCountsContainer = styled.div`
         display: flex;
         align-items: center;
         font-size: 2.4rem;
-        color: var(--text-primary-light);
+        color: ${({ theme }) => theme.colors.textPrimaryLight};
       }
 
       span {
         margin-top: 0.3rem;
-        color: var(--text-secondary);
+        color: ${({ theme }) => theme.colors.textSecondary};
       }
     }
 

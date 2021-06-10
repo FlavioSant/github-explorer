@@ -83,7 +83,6 @@ const Dashboard: NextPage = () => {
 
   return (
     <DashboardContainer>
-      <img src="/logo.svg" alt="GitHub Explorer" title="GitHub Explorer" />
       <Title>Explore repositórios no GitHub.</Title>
 
       <Form ref={formRef} onSubmit={handleSubmit}>

@@ -1,6 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { FiChevronLeft, FiExternalLink, FiStar } from 'react-icons/fi';
+import { FiExternalLink, FiStar } from 'react-icons/fi';
 import { GoRepoForked, GoIssueOpened } from 'react-icons/go';
 
 import { format, parseISO } from 'date-fns';
@@ -10,7 +9,6 @@ import IssueCard from '../../components/IssueCard';
 import RepositoryInfo from '../../components/RepositoryInfo';
 
 import {
-  Header,
   IssueListContainer,
   LinksContainer,
 } from '../../styles/pages/repositoryDetails';
@@ -54,20 +52,8 @@ const RepositoryDetails: NextPage<RepositoryDetailsProps> = ({
   repository,
   issues,
 }) => {
-  const router = useRouter();
-
-  console.log(repository);
-
   return (
     <>
-      <Header>
-        <img src="/logo.svg" alt="GitHub Explorer" title="GitHub Explorer" />
-        <button type="button" title="Voltar" onClick={() => router.back()}>
-          <FiChevronLeft size={16} />
-          Voltar
-        </button>
-      </Header>
-
       {repository && (
         <>
           <RepositoryInfo
